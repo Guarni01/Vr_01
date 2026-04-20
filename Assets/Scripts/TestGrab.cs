@@ -1,26 +1,40 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TestGrab : MonoBehaviour
 {
+    public InputAction GrabAction;
     Renderer myRenderer;
+    bool doOnce;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GrabAction.Enable();
         myRenderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        OVRInput.Update();
-
-
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
+        if(GrabAction.IsPressed())
         {
-
-            myRenderer.material.color = Random.ColorHSV();
-
+            if(!doOnce)
+            {
+                
+                 myRenderer.material.color = Random.ColorHSV();
+                
+                doOnce = true;
+            }
         }
+        else
+        {
+            if(doOnce)
+            {
+
+
+                doOnce = false;
+            }
+        }       
     }
 }

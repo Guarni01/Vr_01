@@ -495,6 +495,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75106664540404542a57d4a5d0a3a2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GrabAction:
+    m_Name: Grab
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: fe5933cc-1aa3-4e64-b2e8-3ae267cec8c5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 119f4623-18d1-4c12-8fab-b613aba8f39d
+      m_Path: <XRController>{RightHand}/{GripButton}
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grab
+      m_Flags: 0
+    m_Flags: 0
 --- !u!54 &581489669
 Rigidbody:
   m_ObjectHideFlags: 0
