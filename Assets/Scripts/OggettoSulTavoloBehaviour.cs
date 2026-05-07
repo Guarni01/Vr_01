@@ -13,4 +13,8 @@ public class OggettoSulTavoloBehaviour : MonoBehaviour
     {
         
     }
+    void OnDestroy()
+    {
+        GameManager.Singleton.OggettiSulTavolo.Remove(gameObject);
+    }
 }
