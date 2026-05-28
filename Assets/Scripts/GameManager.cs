@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Singleton;
+    public int PlayerLifePoints= 100;
     public List <GameObject> OggettiSulTavolo = new List<GameObject>();
+    public List <GameObject> AllTables = new List<GameObject>();
 
     
 
@@ -30,5 +33,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void SearchForTables()
+    {
+        GameObject currentTable = GameObject.Find("TABLE");
+        NavMeshObstacle myObstacle = currentTable.AddComponent<NavMeshObstacle>();
+        myObstacle.carving = true;
     }
 }

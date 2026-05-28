@@ -3,10 +3,11 @@ using UnityEngine.AI;
 
 public class TestUnityNav : MonoBehaviour
 { 
-    public Transform targetObject; 
-    public NavMeshAgent zombieAgent;
-    public Animator zombieAnimator;
-    public float movementThreshold = 0.1f;
+    public Transform TargetObject; 
+    public NavMeshAgent ZombieAgent;
+    public Animator ZombieAnimator;
+    public float MovementThreshold = 0.1f;
+    public float AttackDistanceThreshold = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,14 +18,28 @@ public class TestUnityNav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        zombieAgent.SetDestination(targetObject.position);
-        if(zombieAgent.velocity.magnitude > movementThreshold)
+        ZombieAgent.SetDestination(TargetObject.position);
+        if(ZombieAgent.velocity.magnitude > MovementThreshold)
         {
-            zombieAnimator.SetBool("Walk", true);
+            ZombieAnimator.SetBool("Walk", true);
         }
         else
         {
-            zombieAnimator.SetBool("Walk", false);
-        } 
+            ZombieAnimator.SetBool("Walk", false);
+        }
+       
+
+        if (Vector3.Distance(ZombieAgent.transform.position, TargetObject.position) < ZombieAgent.stoppingDistance + AttackDistanceThreshold)
+        {
+            ZombieAnimator.SetTrigger("Attack");
+        }   
+
     }
+    public void Colpito()
+    {
+        GameManager.Singleton.PlayerLifePoints -= 10;
+        Debug.Log("Player Life Points: " + GameManager.Singleton.PlayerLifePoints);
+        
+    }
+
 }
