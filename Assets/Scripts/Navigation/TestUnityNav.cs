@@ -28,8 +28,9 @@ public class TestUnityNav : MonoBehaviour
             ZombieAnimator.SetBool("Walk", false);
         }
        
+        Vector3 TargetPositionAtZombieHeight = new Vector3 (TargetObject.position.x, ZombieAgent.transform.position.y, TargetObject.position.z);
 
-        if (Vector3.Distance(ZombieAgent.transform.position, TargetObject.position) < ZombieAgent.stoppingDistance + AttackDistanceThreshold)
+        if (Vector3.Distance(ZombieAgent.transform.position, TargetPositionAtZombieHeight) < ZombieAgent.stoppingDistance + AttackDistanceThreshold)
         {
             ZombieAnimator.SetTrigger("Attack");
         }   
