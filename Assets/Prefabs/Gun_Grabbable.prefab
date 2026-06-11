@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407411398114173047}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.032144476, z: -0, w: 0.9994833}
+  m_LocalRotation: {x: 0, y: -0.032143455, z: 0, w: 0.9994833}
   m_LocalPosition: {x: 0, y: 1.065, z: -1.6261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -51,6 +51,7 @@ Transform:
   - {fileID: 4243917704041927670}
   - {fileID: 5887668919538720083}
   - {fileID: 3200632708753295726}
+  - {fileID: 8077137583106868512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -3.684, z: 0}
 --- !u!33 &3790639443171334465
@@ -264,6 +265,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1037169528685138481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8077137583106868512}
+  m_Layer: 0
+  m_Name: GunTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8077137583106868512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037169528685138481}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00076270103, y: 0.058799982, z: 0.12416917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7237118706106930911}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354306104627513435
 GameObject:
   m_ObjectHideFlags: 0
