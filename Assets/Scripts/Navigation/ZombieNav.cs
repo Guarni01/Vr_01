@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TestUnityNav : MonoBehaviour
+public class ZombieNav : MonoBehaviour
 { 
+    public int ZombieLifePoints = 5;
     public Transform TargetObject; 
     public NavMeshAgent ZombieAgent;
     public Animator ZombieAnimator;
     public float MovementThreshold = 0.1f;
     public float AttackDistanceThreshold = 1f;
+    private bool isDead = false;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +44,24 @@ public class TestUnityNav : MonoBehaviour
         GameManager.Singleton.PlayerLifePoints -= 10;
         Debug.Log("Player Life Points: " + GameManager.Singleton.PlayerLifePoints);
         
+    }
+    public void ZombieColpito()
+    {
+        if (!isDead)
+        {
+            ZombieLifePoints -= 1;
+            Debug.Log("Zombie Life Points: " + ZombieLifePoints);
+            if(ZombieLifePoints <= 0)
+                {
+                    ZombieAnimator.SetTrigger("isDead");
+                    Invoke("DestroyZombie", 5); // Chiama la funzione DestroyZombie dopo 5 secondi
+                    isDead = true;
+                }
+        }
+    }
+    void DestroyZombie()
+    {
+        Destroy(gameObject);
     }
 
 }

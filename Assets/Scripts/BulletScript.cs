@@ -21,7 +21,7 @@ public class BulletScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Zombie") 
         {
-        Destroy(collision.gameObject); // Distrugge l'oggetto con cui il proiettile collide
+             collision.gameObject.GetComponent<ZombieNav>().ZombieColpito(); // Chiama la funzione ZombieColpito sull'oggetto con cui il proiettile collide
         }   
     }
 }

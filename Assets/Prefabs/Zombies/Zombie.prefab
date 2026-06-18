@@ -748,10 +748,9 @@ GameObject:
   m_Component:
   - component: {fileID: 504950743557164184}
   - component: {fileID: 8597642841694958555}
-  - component: {fileID: 3778862595103392280}
   m_Layer: 0
   m_Name: zombie_boy_
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,23 +794,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3778862595103392280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2994762076589998277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77071bbce5a27cb48bdabda927c4577b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetObject: {fileID: 0}
-  ZombieAgent: {fileID: 7183439599876876719}
-  ZombieAnimator: {fileID: 8597642841694958555}
-  MovementThreshold: 0.1
-  AttackDistanceThreshold: 0.1
 --- !u!1 &3026255207961254282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2191,7 @@ GameObject:
   - component: {fileID: 6658760708572827574}
   - component: {fileID: 7183439599876876719}
   - component: {fileID: 8133213886322158671}
+  - component: {fileID: 8426247811210200709}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -2224,10 +2207,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8779081283474493640}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 504950743557164184}
   m_Father: {fileID: 0}
@@ -2242,11 +2225,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.3
+  m_Speed: 0.2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 500
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2277,6 +2260,24 @@ CapsuleCollider:
   m_Height: 1.9730195
   m_Direction: 1
   m_Center: {x: 0.010179639, y: 0.99479, z: 0.13453786}
+--- !u!114 &8426247811210200709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779081283474493640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77071bbce5a27cb48bdabda927c4577b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieLifePoints: 5
+  TargetObject: {fileID: 0}
+  ZombieAgent: {fileID: 7183439599876876719}
+  ZombieAnimator: {fileID: 8597642841694958555}
+  MovementThreshold: 0.1
+  AttackDistanceThreshold: 0.1
 --- !u!1 &8999612543782974834
 GameObject:
   m_ObjectHideFlags: 0

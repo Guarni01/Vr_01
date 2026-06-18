@@ -57,7 +57,7 @@ public class GunGrabBehaviourScript : MonoBehaviour
     {
        if(other.gameObject.tag == "Gun")
         {
-            temporaryGunObject = other.transform.parent.gameObject;
+            temporaryGunObject = other.transform.gameObject;
         }
         
     }
